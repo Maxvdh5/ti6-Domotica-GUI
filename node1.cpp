@@ -148,8 +148,13 @@ QString node1::getMode(){
        }
        else if(ui->ModeCB->currentText()== "Blue"){
        return("5");
-       }
+    }
 }
+
+//QString node1::setadres(QString adres)
+//{
+  //  adres = adres;
+//}
 
 void node1::on_ActivateButton_clicked()
 {
@@ -194,7 +199,7 @@ void node1::on_SimulateButton_clicked()
     xml = "xml="+xml;
     qDebug()<<xml;
 
-        QUrl serviceUrl = QUrl("http://pellevangils.nl/post.php");
+        QUrl serviceUrl = QUrl(this->adres);
           QString postData = (xml);
 
           QNetworkRequest request(serviceUrl);

@@ -4,7 +4,7 @@
 #include <QWidget>
 #include <QNetworkReply>
 
-
+//#include "mainwindow.h"
 
 
 namespace Ui {
@@ -48,6 +48,8 @@ public slots:
 
     QString getMode();
 
+  //  QString setadres(QString adres);
+
 
 
 
@@ -67,6 +69,7 @@ private:
 
     int status;
     bool deleteMe = false;
+    QString adres = "10.0.20.20";
 
 };
 

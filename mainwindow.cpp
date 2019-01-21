@@ -59,7 +59,8 @@ void MainWindow::WriteHttp(){
 }
 
 void MainWindow::Readhttp(QString Header,QString Body){
-    QUrl serviceUrl = QUrl("http://pellevangils.nl/post.php");
+    QUrl serviceUrl = QUrl(this->adres);
+        qDebug()<<this->adres;
         qDebug()<<Header;
         QString postHeader = (Header);
       QString postData = (Body);
@@ -110,7 +111,7 @@ void MainWindow::onfinish(QNetworkReply *reply)
     first++;
 
      scroll = new QHBoxLayout(this);
-     cont.readXML(test);
+     cont.readXML(noFile);
 
      for (node1* nodes : cont) {
          scroll->addWidget(nodes);
@@ -124,3 +125,9 @@ void MainWindow::onConfirm(QNetworkReply *reply){
     qDebug()<<reply->readAll();
 }
 
+
+void MainWindow::on_pushButton_clicked()
+{
+    this->adres = ui->adresInput->text();
+
+}

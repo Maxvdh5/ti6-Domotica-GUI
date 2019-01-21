@@ -8,6 +8,7 @@
 #include <QHBoxLayout>
 #include <QNetworkReply>
 
+
 namespace Ui {
 class MainWindow;
 }
@@ -22,6 +23,10 @@ public:
 
     int nodes = 0;
     int first = 0;
+
+
+
+
     QHBoxLayout * scroll;
 
 private slots:
@@ -43,10 +48,15 @@ private slots:
 
 //    void on_Netwerkactief_windowIconTextChanged(const QString &iconText);
 
+    void on_pushButton_clicked();
+
 private:
     Ui::MainWindow *ui;
     node1 node;
     nodeContainer cont;
+    QString adres = "http://pellevangils.nl/post.php";
+
+
 
 };
 
